@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Calculadora</string>
+    <string name="ocho">ocho</string>
+    <string name="_99">99</string>
+    <string name="textview">TextView</string>
+    <string name="igual">igual</string>
+</resources>
