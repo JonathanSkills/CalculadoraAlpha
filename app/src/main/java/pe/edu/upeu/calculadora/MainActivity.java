@@ -377,32 +377,64 @@ public class MainActivity extends AppCompatActivity implements Main.Vista{
         cero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(resultado==true){
-                    if(operacion==false){
-                        resultado=false;
-                        txtnumero.setText("0");
-                        txtalternativo.setText("0");
-                    }else{
-                        txtnumero.setText("0");
-                        txtalternativo.setText(txtalternativo.getText()+"0");
-                    }
-
-                }else{
-                    if(opcion==""){
-                        txtnumero.setText(txtnumero.getText()+"0");
-                        txtalternativo.setText(txtalternativo.getText()+"0");
-                    }else{
-                        if(operacion==true){
-                            txtnumero.setText("");
-                            txtnumero.setText(txtnumero.getText()+"0");
-                            txtalternativo.setText(txtalternativo.getText()+"0");
-                            operacion=false;
+                if(!txtnumero.getText().toString().startsWith("0")){
+                    if(resultado==true){
+                        if(operacion==false){
+                            resultado=false;
+                            txtnumero.setText("0");
+                            txtalternativo.setText("0");
                         }else{
+                            txtnumero.setText("0");
+                            txtalternativo.setText(txtalternativo.getText()+"0");
+                        }
+
+                    }else{
+                        if(opcion==""){
                             txtnumero.setText(txtnumero.getText()+"0");
                             txtalternativo.setText(txtalternativo.getText()+"0");
+                        }else{
+                            if(operacion==true){
+                                txtnumero.setText("");
+                                txtnumero.setText(txtnumero.getText()+"0");
+                                txtalternativo.setText(txtalternativo.getText()+"0");
+                                operacion=false;
+                            }else{
+                                txtnumero.setText(txtnumero.getText()+"0");
+                                txtalternativo.setText(txtalternativo.getText()+"0");
+                            }
+                        }
+                    }
+                }else{
+                    if(txtnumero.getText().toString().startsWith("0.")){
+                        if(resultado==true){
+                            if(operacion==false){
+                                resultado=false;
+                                txtnumero.setText("0");
+                                txtalternativo.setText("0");
+                            }else{
+                                txtnumero.setText("0");
+                                txtalternativo.setText(txtalternativo.getText()+"0");
+                            }
+
+                        }else{
+                            if(opcion==""){
+                                txtnumero.setText(txtnumero.getText()+"0");
+                                txtalternativo.setText(txtalternativo.getText()+"0");
+                            }else{
+                                if(operacion==true){
+                                    txtnumero.setText("");
+                                    txtnumero.setText(txtnumero.getText()+"0");
+                                    txtalternativo.setText(txtalternativo.getText()+"0");
+                                    operacion=false;
+                                }else{
+                                    txtnumero.setText(txtnumero.getText()+"0");
+                                    txtalternativo.setText(txtalternativo.getText()+"0");
+                                }
+                            }
                         }
                     }
                 }
+
 
             }
         });
@@ -510,7 +542,7 @@ public class MainActivity extends AppCompatActivity implements Main.Vista{
 
 
                 String str=txtnumero.getText().toString();
-                if(str=="Error"){
+                if(str!="Error"){
                     if (str.length() >=1 ) {
                         str = str.substring(0, str.length() - 1);
                         txtnumero.setText(str);
